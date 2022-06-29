@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>design by div.</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="styles/styles.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+
+<body>
+   <div class="intro">
+      <div class="intro title-1">
+         <h1>Minimalist<br>Believer</h1>
+      </div>
+      <div class="intro title-2">
+         <h1>Design<br>Driven</h1>
+      </div>
+      <div class="intro title-3">
+         <h1>Potential<br><span class="glitch">Disruptor</span></h1>
+      </div>
+   </div>
+   <main>
+      <div class="content">
+         <section>
+            <div class="title">More time for yourself<span>Abu Dhabi Commercial Bank</span></div>
+            <div class="img"></div>
+         </section>
+         <section>
+            <div class="title">Find your dream home<span>Abu Dhabi Commercial Bank & Bayut</span></div>
+            <div class="img"></div>
+         </section>
+         <section>
+            <div class="title">Personal Loan through ADCB Hayyak<span>Abu Dhabi Commercial Bank</span></div>
+            <div class="img"></div>
+         </section>
+      </div>
+   </main>
+   <div class="bio-container">
+      <div>
+         <p style="color:#00FFFF;">Namaste!<br><br></p>
+         <p class="info-big">My name is Divyesh Bhandari, a multi-disciplinary designer & art director born in India,
+            based in
+            Dubai. Working at ImpactBBDO.<br>
+         </p>
+         <p class="info-small">12+ years of progressive experience in the design, art-direction, branding & visual
+            design with added front-end & animation principles. Currently in pursuit of gold in the advertising
+            world.<br><br><br><br>
+            <a href="#" target="_blank" style="color:#00FFFF;" class="chai-connect">Let's chat over chai? <svg
+                  id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+                  <defs>
+                     <style>
+                        .external {
+                           fill-rule: evenodd;
+                           fill: #00FFFF;
+                        }
+                     </style>
+                  </defs>
+                  <polygon class="external"
+                     points="0 0 0 1.5 12.44 1.5 0 13.94 0 15 1.06 15 13.5 2.56 13.5 15 15 15 15 0 0 0" />
+               </svg></a>
+         </p>
+      </div>
+      <div>
+         <p style="color:#00FFFF;">Playgrounds</p>
+         <p class="info-small">ImpactBBDO<br>
+            MirumAgency<br>GeneralMills<br>ZWA!</p>
+      </div>
+   </div>
+   <header>
+      <div class="logo">
+         <svg class="" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.63 62.87">
+            <defs>
+               <style>
+                  .cls-1 {
+                     fill: none;
+                     stroke: #00FFFF;
+                     stroke-miterlimit: 10;
+                     stroke-width: 3px;
+                  }
+               </style>
+            </defs>
+            <polygon class="cls-1" points="20.81 61.45 1.22 41.85 20.81 2.25 40.41 41.85 20.81 61.45" />
+            <line class="cls-1" x1="20.81" y1="61.45" x2="20.81" y2="2.25" />
+         </svg>
+         <span>Divyesh Bhandari.</span>
+      </div>
+      <div>
+         <nav>
+            <a class="bio-open" href=#>Bio.</a>
+         </nav>
+      </div>
+   </header>
+   <div class="footer">
+      <h1>Be kind to design.</h1>
+      <a class="connect-open" href=#>Connect.</a>
+      <!-- <div class="right-bottom theme-switcher"><label for=switcher class="form-switch">
+               <input type="checkbox" id="switcher">
+               <i></i>
+            </label>
+         </div> -->
+   </div>
+
+   <script src="app.js"></script>
+
+   <div class="cursor">
+      <div class></div>
+   </div>
+
+
+   <script>
+      (function () {
+         const cursor = document.querySelector('.cursor');
+         const cursorchild = document.querySelector('.cursor div');
+
+         let currentX = 0;
+         let currentY = 0;
+         let aimX = 0;
+         let aimY = 0;
+         let speed = 0.01;
+
+         const animate = function () {
+            currentX += (aimX - currentX) * speed;
+
+         }
+         const editCursor = e => {
+            const { clientX: x, clientY: y } = e;
+            cursor.style.left = x + 'px';
+            cursor.style.top = y + 'px';
+            cursorchild.style.left = x + 'px';
+            cursorchild.style.top = y + 'px';
+         };
+         window.addEventListener('mousemove', editCursor);
+
+         const cursorTag = document.querySelector("div.cursor")
+
+         document.body.addEventListener('mouseover', function (e) {
+            if (e.target && e.target.nodeName == "A") {
+               cursor.style.background = "#00FFFF";
+               cursor.style.padding = "0.25rem";
+            }
+         });
+
+         document.body.addEventListener('mouseout', function (e) {
+            if (e.target && e.target.nodeName == "A") {
+               cursor.style.background = "#FFFFFF";
+               cursor.style.padding = "0.5rem";
+            }
+         });
+
+      })();
+
+
+      TweenMax.staggerFrom(
+         ".intro > div",
+         0.8,
+         {
+            x: "-60",
+            ease: Power3.easeInOut,
+            opacity: "0",
+         },
+         2
+      );
+
+      TweenMax.staggerTo(
+         ".intro > div",
+         0.8,
+         {
+            x: "60",
+            ease: Power3.easeInOut,
+            delay: 1.2,
+            opacity: "0",
+         },
+         2
+      );
+
+      anime.timeline().add({
+         targets: "header",
+         opacity: [0, 1],
+         translateY: [80, 0],
+         translateZ: 0,
+         easing: "easeOutExpo",
+         duration: 2000,
+         delay: 6000
+      });
+
+      anime.timeline().add({
+         targets: ".footer",
+         opacity: [0, 1],
+         translateY: [80, 0],
+         translateZ: 0,
+         easing: "easeOutExpo",
+         duration: 2000,
+         delay: 6000 + 300
+      });
+
+      anime.timeline().add({
+         //targets: ".selectedwork",
+         targets: "main",
+         opacity: [0, 1],
+         translateY: [80, 0],
+         translateZ: 0,
+         easing: "easeOutExpo",
+         duration: 2000,
+         delay: 6000 + 500
+      });
+
+      var t1 = new TimelineMax({ paused: true });
+
+      t1.to(".bio-container", 0.5, {
+         borderWidth: 5,
+         opacity: 1,
+         ease: Expo.ease,
+         zIndex: 0
+      });
+
+      t1.staggerFrom(
+         ".bio-container p",
+         0.5,
+         {
+            y: "80",
+            ease: Power3.ease,
+            opacity: "0",
+         },
+         0.05
+      );
+
+      t1.reverse();
+
+      var bio_open = document.getElementsByClassName("bio-open");
+      function fn_bio_open() {
+         t1.reversed(!t1.reversed());
+         if (bio_open[0].innerHTML === "Bio.") {
+            bio_open[0].innerHTML = ".Back";
+         } else {
+            bio_open[0].innerHTML = "Bio.";
+         }
+      }
+      bio_open[0].addEventListener('click', fn_bio_open, false);
+
+
+      // const input = document.querySelector(".theme-switcher input");
+
+      // input.addEventListener("change", (e) => {
+      //    if (e.target.checked) {
+      //       document.body.setAttribute("data-theme", "light");
+      //    } else {
+      //       document.body.setAttribute("data-theme", "dark");
+      //    }
+      // });
+
+   </script>
+</body>
+
+</html>
